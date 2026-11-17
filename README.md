@@ -6,6 +6,22 @@ A Y2K / Gen Z skin for Video.js v10 (`@videojs/html` 10.5, loaded from the offic
 
 ![hero](shots/hero.png)
 
+## v2: meet Bloop ✦ (the mascot that watches you)
+A glossy holographic jelly-blob alien with a star antenna sits on the player frame.
+- **Eyes follow you.** It tracks your pointer and your finger on mobile (`pointermove` / `touchmove`). Each pupil is moved with `atan2` and clamped inside the eye. When you hover or keyboard-focus a control, Bloop looks at that control. With no input it wanders its gaze around the player, and it blinks at random.
+- **Reacts to the player:**
+  - play: happy ^‿^ eyes and a bounce
+  - pause: sleepy lids and zzz
+  - seeking: dizzy spiral eyes
+  - mute: hands over its ears, "shh"
+  - volume up: star eyes, "LOUDER!!"
+  - fullscreen: "woah"
+- A speech bubble and a **mood card** below the player mirror its state.
+- **Mobile (≈412 px):** the player fills the width. The video is 4:3, and the controls move below the video into an always-visible two-row dock with 48–64 px touch targets. Seek ±10, PiP and volume stay visible. Feature stickers and the mood card fill the rest of the page.
+- **Accessibility kept:** the mascot, bubble and mood card are decorative (`aria-hidden`), since real state comes from the v10 controls and `media-status-announcer`. With `prefers-reduced-motion`, Bloop doesn't bounce or animate, and its eyes still track, but more subtly.
+
+![mobile](shots/mobile.png)
+
 ## Design
 - **Iridescent foil frame.** A slowly rotating conic holographic gradient border, animated with an `@property` angle.
 - **Bubbly chrome buttons.** Glossy pill and orb controls with a specular highlight and squishy spring hover and press motion. The play button is a hot-pink candy bubble.
