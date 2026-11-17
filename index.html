@@ -22,17 +22,60 @@
     <media-container class="holo">
       <video src="https://stream.mux.com/BV3YZtogl89mg9VcNBhhnHm02Y34zI1nlMuMQfAbl3dM/highest.mp4" playsinline crossorigin preload="auto"></video>
 
+
+      <!-- decorative interactive mascot "Bloop" (aria-hidden; all info is also in real controls/announcer) -->
+      <div class="bloop" aria-hidden="true" data-mood="idle">
+        <div class="bloop-bubble"><span class="b-idle">hi bestie ✦</span><span class="b-happy">vibing ♡</span><span class="b-sleepy">zzz… paused</span><span class="b-dizzy">wheee~ seeking</span><span class="b-shh">shh 🤫 muted</span><span class="b-excited">LOUDER!! ★</span><span class="b-wow">woah, big screen!</span></div>
+        <svg class="bloop-svg" viewBox="0 0 160 150">
+          <defs>
+            <linearGradient id="bl-holo" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffd1ee"/><stop offset=".35" stop-color="#d5c6ff"/><stop offset=".65" stop-color="#b9e6ff"/><stop offset="1" stop-color="#c8ffeb"/>
+            </linearGradient>
+            <radialGradient id="bl-shine" cx=".35" cy=".25" r=".6"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+            <linearGradient id="bl-star" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6a8"/><stop offset="1" stop-color="#ff7cc4"/></linearGradient>
+          </defs>
+          <g class="bl-body">
+            <path class="bl-antenna" d="M80 34 Q78 16 92 8" fill="none" stroke="#24123d" stroke-width="3" stroke-linecap="round"/>
+            <path class="bl-star" d="M92 0 l3.2 6.4 7 1-5 5 1.2 7-6.4-3.4-6.4 3.4 1.2-7-5-5 7-1z" fill="url(#bl-star)" stroke="#24123d" stroke-width="1.6"/>
+            <path d="M80 30 C122 30 146 62 146 98 C146 132 118 146 80 146 C42 146 14 132 14 98 C14 62 38 30 80 30Z" fill="url(#bl-holo)" stroke="#24123d" stroke-width="3"/>
+            <ellipse cx="58" cy="58" rx="30" ry="16" fill="url(#bl-shine)"/>
+            <ellipse class="bl-cheek" cx="40" cy="104" rx="10" ry="6" fill="#ff8fcf" opacity=".7"/>
+            <ellipse class="bl-cheek" cx="120" cy="104" rx="10" ry="6" fill="#ff8fcf" opacity=".7"/>
+            <!-- eyes -->
+            <g class="bl-eye" data-eye="l" transform="translate(56 84)">
+              <g class="e-open"><ellipse rx="17" ry="19" fill="#fff" stroke="#24123d" stroke-width="3"/>
+                <g class="bl-pupil"><circle r="9" fill="#24123d"/><circle cx="-3" cy="-4" r="3.2" fill="#fff"/><circle cx="3" cy="3" r="1.4" fill="#fff"/></g>
+                <rect class="bl-lid" x="-19" y="-21" width="38" height="0" fill="#d5c6ff" stroke="#24123d" stroke-width="3"/></g>
+              <path class="e-happy" d="M-13 4 Q0 -14 13 4" fill="none" stroke="#24123d" stroke-width="4" stroke-linecap="round"/>
+              <path class="e-dizzy" d="M0 0 m-2 0 a2 2 0 1 1 4 0 a5 5 0 1 1 -9 0 a8 8 0 1 1 15 0 a11 11 0 1 1 -21 0" fill="none" stroke="#24123d" stroke-width="2.6" stroke-linecap="round"/>
+              <path class="e-star" d="M0 -14 l4 9 10 1-7.5 7 2 10-8.5-5-8.5 5 2-10-7.5-7 10-1z" fill="url(#bl-star)" stroke="#24123d" stroke-width="2"/>
+            </g>
+            <g class="bl-eye" data-eye="r" transform="translate(104 84)">
+              <g class="e-open"><ellipse rx="17" ry="19" fill="#fff" stroke="#24123d" stroke-width="3"/>
+                <g class="bl-pupil"><circle r="9" fill="#24123d"/><circle cx="-3" cy="-4" r="3.2" fill="#fff"/><circle cx="3" cy="3" r="1.4" fill="#fff"/></g>
+                <rect class="bl-lid" x="-19" y="-21" width="38" height="0" fill="#d5c6ff" stroke="#24123d" stroke-width="3"/></g>
+              <path class="e-happy" d="M-13 4 Q0 -14 13 4" fill="none" stroke="#24123d" stroke-width="4" stroke-linecap="round"/>
+              <path class="e-dizzy" d="M0 0 m-2 0 a2 2 0 1 1 4 0 a5 5 0 1 1 -9 0 a8 8 0 1 1 15 0 a11 11 0 1 1 -21 0" fill="none" stroke="#24123d" stroke-width="2.6" stroke-linecap="round"/>
+              <path class="e-star" d="M0 -14 l4 9 10 1-7.5 7 2 10-8.5-5-8.5 5 2-10-7.5-7 10-1z" fill="url(#bl-star)" stroke="#24123d" stroke-width="2"/>
+            </g>
+            <!-- mouths -->
+            <path class="m m-idle" d="M72 116 Q80 123 88 116" fill="none" stroke="#24123d" stroke-width="3.4" stroke-linecap="round"/>
+            <path class="m m-happy" d="M68 113 Q80 132 92 113 Z" fill="#ff5fb7" stroke="#24123d" stroke-width="3" stroke-linejoin="round"/>
+            <ellipse class="m m-wow" cx="80" cy="120" rx="7" ry="9" fill="#24123d"/>
+            <path class="m m-sleepy" d="M74 118 h12" stroke="#24123d" stroke-width="3.4" stroke-linecap="round"/>
+            <path class="m m-dizzy" d="M68 118 q4 -5 8 0 t8 0 t8 0" fill="none" stroke="#24123d" stroke-width="3" stroke-linecap="round"/>
+            <!-- hands over ears (mute) -->
+            <g class="bl-hands"><ellipse cx="16" cy="88" rx="13" ry="16" fill="url(#bl-holo)" stroke="#24123d" stroke-width="3"/><ellipse cx="144" cy="88" rx="13" ry="16" fill="url(#bl-holo)" stroke="#24123d" stroke-width="3"/></g>
+          </g>
+          <g class="bl-zzz" font-family="Silkscreen,monospace" fill="#7a5cff"><text x="128" y="40" font-size="16">z</text><text x="140" y="26" font-size="12">z</text><text x="150" y="14" font-size="9">z</text></g>
+        </svg>
+      </div>
+
       <!-- decorative Y2K window chrome -->
       <div class="holo-titlebar" aria-hidden="true">
         <span class="holo-dots"><i></i><i></i><i></i></span>
         <span class="holo-file">holo_pop.exe</span>
         <span class="holo-stars">✦ ✧ ✦</span>
-      </div>
-
-      <!-- sticker that reacts to state (status is also announced by media-status-announcer) -->
-      <div class="holo-sticker" aria-hidden="true">
-        <span class="when-playing">♡ now playing</span>
-        <span class="when-paused">✿ paused, bestie</span>
       </div>
 
       <div class="holo-sparkles" aria-hidden="true"></div>
@@ -111,6 +154,18 @@
       </media-error-dialog>
     </media-container>
   </video-player>
+
+
+  <section class="extras">
+    <div class="moodcard" aria-hidden="true">
+      <span class="mc-face">◕‿◕</span>
+      <div><p class="mc-label">Bloop's mood</p><p class="mc-text">hi bestie ✦ press play</p></div>
+    </div>
+    <ul class="features" aria-label="Skin features">
+      <li class="f1">✦ holo foil frame</li><li class="f2">★ star scrubber</li><li class="f3">♡ mascot that watches you</li>
+      <li class="f4">⌨ full keyboard</li><li class="f5">◎ big focus rings</li><li class="f6">☾ reduced-motion friendly</li>
+    </ul>
+  </section>
 
   <section class="keys" aria-label="Keyboard shortcuts">
     <span><kbd>Space</kbd>/<kbd>K</kbd> play</span>
